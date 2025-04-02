@@ -1,0 +1,137 @@
+/* Fuentes y colores base */
+:root {
+    --primary-color: #ff85a2;
+    /* Rosa pastel */
+    --secondary-color: #ffd6e0;
+    /* Rosa claro */
+    --accent-color: #c782ff;
+    /* Lila */
+    --dark-color: #5e2b60;
+    /* Morado oscuro */
+    --light-color: #fff9fb;
+    /* Blanco rosado */
+    --text-color: #333;
+    --font-main: 'Quicksand', sans-serif;
+}
+
+/* Estilos generales */
+body {
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-color);
+    color: var(--text-color);
+}
+
+/* Navbar */
+app-navbar nav {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+app-navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+app-navbar a:hover {
+    background-color: var(--dark-color);
+}
+
+/* Home */
+.home-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        background-image: url('/assets/images/pasteles.jpg');
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+/* Catálogo de productos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    margin: 0.5rem 1rem;
+    color: var(--dark-color);
+}
+
+.product-card p {
+    margin: 0.5rem 1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.product-card button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: var(--dark-color);
+}
+
+/* Carrito de compras */
+.shopping-cart {
+    padding: 2rem;
+    background: white;
+    margin: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-total {
+    font-weight: bold;
+    text-align: right;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,142 @@
+/* Estilos generales */
+.pasteleria-footer {
+    background-color: #5e2b60;
+    /* Morado oscuro */
+    color: white;
+    padding: 3rem 0 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+/* Secciones */
+.footer-section {
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #ff85a2;
+    /* Rosa pastel */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+}
+
+.footer-description {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+/* Listas */
+.schedule-list,
+.contact-list {
+    list-style: none;
+    padding: 0;
+    line-height: 2;
+}
+
+.contact-list i {
+    margin-right: 0.5rem;
+    color: #ff85a2;
+    width: 1.2rem;
+    text-align: center;
+}
+
+/* Redes Sociales */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social-icons a {
+    color: white;
+    background-color: #ff85a2;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #ff6b8b;
+    transform: translateY(-3px);
+}
+
+/* Boletín de Noticias */
+.newsletter {
+    margin-top: 1.5rem;
+}
+
+.newsletter input {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.subscribe-btn {
+    background-color: #ff85a2;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.subscribe-btn:hover {
+    background-color: #ff6b8b;
+}
+
+/* Copyright */
+.copyright {
+    background-color: #3a1a3b;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.legal-links {
+    margin-top: 0.8rem;
+}
+
+.legal-links a {
+    color: #ff85a2;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-logo,
+    .contact-list li {
+        justify-content: center;
+    }
+}

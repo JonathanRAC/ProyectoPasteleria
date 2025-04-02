@@ -1,0 +1,57 @@
+<section class="product-catalog" aria-labelledby="catalog-heading">
+    <h2 id="catalog-heading" class="visually-hidden">Nuestros Pasteles</h2>
+
+    <div class="product-grid" role="list">
+        <article *ngFor="let product of products; trackBy: trackByProductId" class="product-card"
+            [class.highlight]="product.featured" role="listitem" [attr.aria-labelledby]="'product-title-' + product.id">
+
+            <div class="image-container">
+                <img [ngSrc]="getImagePath(product.image)" [alt]="'Imagen de ' + product.name" width="300" height="200"
+                    priority="low">
+            </div>
+
+            <div class="product-info">
+                <h3 [id]="'product-title-' + product.id">{{ product.name }}</h3>
+
+                <p class="description" [attr.aria-describedby]="'product-desc-' + product.id">
+                    {{ product.description || 'Delicioso pastel artesanal' }}
+                    <span [id]="'product-desc-' + product.id" class="visually-hidden">
+                        Descripción: {{ product.description || 'Pastel artesanal' }}
+                    </span>
+                </p>
+
+                <p class="price" [attr.aria-label]="'Precio: ' + (product.price | currency:'USD':'symbol':'1.2-2')">
+                    {{ product.price | currency:'USD':'symbol':'1.2-2' }}
+                </p>
+
+                <div class="actions">
+                    <button type="button" class="add-to-cart" (click)="addToCart(product)"
+                        [attr.aria-label]="'Añadir ' + product.name + ' al carrito'" [disabled]="!product.available"
+                        [class.disabled]="!product.available">
+                        <fa-icon [icon]="faShoppingCart" aria-hidden="true"></fa-icon>
+                        <span>Añadir al carrito</span>
+                    </button>
+
+                    <button *ngIf="product.customizable" type="button" (click)="customizeProduct(product)"
+                        [attr.aria-label]="'Personalizar ' + product.name" class="btn btn-custom">
+                        <fa-icon [icon]="faEdit"></fa-icon>
+                        <span>Personalizar</span>
+                    </button>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- Modal de personalización -->
+    <div *ngIf="showCustomizeModal" class="customize-modal">
+        <div class="modal-content">
+            <h3>Personalizar {{ selectedProduct?.name }}</h3>
+            <textarea [(ngModel)]="customMessages[selectedProduct?.id]"
+                placeholder="¿Cómo quieres personalizar tu pastel?"></textarea>
+            <div class="modal-actions">
+                <button (click)="showCustomizeModal = false">Cancelar</button>
+                <button (click)="addCustomToCart(customMessages[selectedProduct?.id])">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+</section>

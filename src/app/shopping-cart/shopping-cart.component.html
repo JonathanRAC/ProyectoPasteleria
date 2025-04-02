@@ -1,0 +1,32 @@
+<!-- shopping-cart.component.html -->
+<button (click)="toggleCart()" class="cart-button">
+    🛒 Carrito
+    <span *ngIf="cartService.getTotalItems() > 0" class="badge">
+        {{ cartService.getTotalItems() }}
+    </span>
+</button>
+
+<div *ngIf="isCartOpen" class="cart-modal">
+    <div class="cart-content">
+        <h3>Tu Carrito</h3>
+
+        <div *ngFor="let item of cartItems" class="cart-item">
+            <h4>{{ item.name }}</h4>
+            <p *ngIf="item.customMessage">{{ item.customMessage }}</p>
+            <div class="quantity-control">
+                <button (click)="updateQuantity(item, item.quantity - 1)">-</button>
+                <span>{{ item.quantity }}</span>
+                <button (click)="updateQuantity(item, item.quantity + 1)">+</button>
+            </div>
+            <p>Precio: {{ item.price | currency }}</p>
+            <button (click)="removeItem(item.id, item.custom)" class="remove-btn">Eliminar</button>
+        </div>
+
+        <div class="cart-total">
+            <strong>Total: {{ total | currency }}</strong>
+        </div>
+
+        <button (click)="checkout()" class="checkout-btn">Finalizar Compra</button>
+        <button (click)="toggleCart()" class="close-btn">Cerrar</button>
+    </div>
+</div>

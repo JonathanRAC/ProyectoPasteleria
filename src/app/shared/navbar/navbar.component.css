@@ -1,0 +1,109 @@
+/* Estilos generales del navbar */
+.pasteleria-nav {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    /* Cambiado a flex-end para alinear a la derecha */
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+}
+
+/* Logo */
+.nav-logo {
+    position: absolute;
+    left: 2rem;
+    margin-right: auto;
+    /* Permite que el logo empuje el menú hacia la derecha */
+}
+
+/* Menú de navegación */
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: auto;
+    padding-right: 2rem;
+    /* Eliminado el padding derecho */
+    position: relative;
+    right: 100px;
+    /* Reducido de 80px a 40px */
+}
+
+/* Versión alternativa si prefieres margen en lugar de transform */
+/*
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: auto;
+    margin-right: 20px;
+}
+*/
+
+/* Resto de estilos se mantienen igual */
+.nav-link {
+    color: #5e2b60;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+}
+
+.nav-link.active {
+    background-color: #ff6b8b;
+    color: white;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pasteleria-nav {
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: center;
+    }
+
+    .nav-logo {
+        position: static;
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+
+    .nav-menu {
+        margin: 1rem 0;
+        padding-right: 0;
+        transform: none;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.login-link {
+    color: #5e2b60;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+}
